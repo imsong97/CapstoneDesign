@@ -65,9 +65,9 @@
                         prediction[i].className + ": " + ((prediction[i].probability)*100).toFixed(1)+ "%";
                     labelContainer.childNodes[i].innerHTML = classPrediction;
                 }
-                if (prediction[0]>=0.7){
+                if (prediction[0],probability>=0.7){
                     content.innerText = "--사람을 만나 당신의 긍정적인 에너지를 나누어 주세요";
-                }else if((prediction[0]>=0.4)&&(prediction[0]<0.7)){
+                }else if((prediction[0].probability>=0.4)&&(prediction[0].probability<0.7)){
                     content.innerText = "--감정의 변화가 필요해요, 좋아하는 음악을 찾아 감성을 발휘해 보는 것이 어떨까요?";
                 }else{
                     content.innerText = "--운동을 하여 부정적인 감정을 해소시키는 것이 좋겠군요?";
