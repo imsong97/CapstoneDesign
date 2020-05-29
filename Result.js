@@ -15,7 +15,7 @@ async function init() {
     const modelURL = URL + "model.json";
     const metadataURL = URL + "metadata.json";
 
-    $('.file-upload-content').hide();
+    $('.mage-upload-wrap').hide();
     $('.loading').show();
 
     // load the model and metadata
