@@ -15,9 +15,6 @@ async function init() {
     const modelURL = URL + "model.json";
     const metadataURL = URL + "metadata.json";
 
-    $('.mage-upload-wrap').hide();
-    $('.loading').show();
-
     // load the model and metadata
     // Refer to tmImage.loadFromFiles() in the API to support files from a file picker
     // or files from your local hard drive
@@ -25,12 +22,13 @@ async function init() {
     model = await tmImage.load(modelURL, metadataURL);
     maxPredictions = model.getTotalClasses();
 
-    // Convenience function to setup a webcam
-    const flip = true; // whether to flip the webcam
-    webcam = new tmImage.Webcam(200, 200, flip); // width, height, flip
-    await webcam.setup(); // request access to the webcam
-    // await webcam.play();
-    window.requestAnimationFrame(loop);
+    // // Convenience function to setup a webcam
+    // const flip = true; // whether to flip the webcam
+    // webcam = new tmImage.Webcam(200, 200, flip); // width, height, flip
+    // await webcam.setup(); // request access to the webcam
+    // // await webcam.play();
+    // window.requestAnimationFrame(loop);
+    await predict();
 
     // append elements to the DOM
     document.getElementById("webcam-container").appendChild(webcam.canvas);
@@ -38,11 +36,14 @@ async function init() {
     for (let i = 0; i < maxPredictions; i++) { // and class labels
         labelContainer.appendChild(document.createElement("div"));
     }
+
+    $('.mage-upload-wrap').hide();
+    $('.loading').show();
 }
 
 async function loop() {
     webcam.update(); // update the webcam frame
-    await predict();
+    // await predict();
     window.requestAnimationFrame(loop);
 }
 
