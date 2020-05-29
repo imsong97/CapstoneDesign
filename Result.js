@@ -5,9 +5,10 @@
 const URL = "./my_model/";
 
 let model, webcam, labelContainer, maxPredictions;
-let content = document.getElementById("contents")
 
+const content = document.getElementById("contents")
 const btnCamera = document.querySelector(".camera-btn")
+const img = document.querySelector(".file-upload-image")
 
 // Load the image model and setup the webcam
 async function init() {
