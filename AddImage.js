@@ -17,8 +17,8 @@ function removeUpload() {
     $('.file-upload-input').replaceWith($('.file-upload-input').clone());
     $('.file-upload-content').hide();
     $('.image-upload-wrap').show();
-    $('.label-container').empty();
-    $('.contents').empty();
+    $('#label-container').empty();
+    $('#contents').empty();
 }
 
 $('.image-upload-wrap').bind('dragover', function () {
