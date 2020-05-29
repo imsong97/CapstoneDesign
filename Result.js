@@ -40,7 +40,7 @@ async function init() {
         labelContainer.appendChild(document.createElement("div"));
     }
 
-    predict();
+    await predict();
 }
 
 // async function loop() {
