@@ -24,6 +24,7 @@ async function init() {
     // Note: the pose library adds "tmImage" object to your window (window.tmImage)
     model = await tmImage.load(modelURL, metadataURL);
     maxPredictions = model.getTotalClasses();
+    predict();
 
     // // Convenience function to setup a webcam
     // const flip = true; // whether to flip the webcam
@@ -39,8 +40,6 @@ async function init() {
     for (let i = 0; i < maxPredictions; i++) { // and class labels
         labelContainer.appendChild(document.createElement("div"));
     }
-
-    await predict();
 }
 
 // async function loop() {
