@@ -45,7 +45,8 @@ async function loop() {
 // run the webcam image through the image model
 async function predict() {
     // predict can take in an image, video or canvas html element
-    const prediction = await model.predict(webcam.canvas);
+    const img = document.querySelector(".file-upload-image")
+    const prediction = await model.predict(img);
     for (let i = 0; i < maxPredictions; i++) {
         const classPrediction =
             prediction[i].className + ": " + ((prediction[i].probability)*100).toFixed(1)+ "%";

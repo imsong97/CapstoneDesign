@@ -1,70 +1,71 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <!-- Required meta tags -->
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-        <!-- Bootstrap CSS -->
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-        <title>지금 너의 기분은</title>
-        <link rel="stylesheet" href="style.css">
-    </head>
-    <body>
-        <div>Teachable Machine Image Model</div>
-        <button type="button" onclick="init()">Start</button>
-        <div id="webcam-container"></div>
-        <div id="label-container"></div>
-        <div id="contents"></div>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link href='https://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
+    <title>지금 너의 기분은</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div>Teachable Machine Image Model</div>
+    <button type="button" onclick="init()">Start</button>
+    <div id="webcam-container"></div>
+    <div id="label-container"></div>
+    <div id="contents"></div>
 
-        <nav class="navbar navbar-expand-lg navbar-light" nav-distance>
-            <a class="navbar-brand" href="#">지금 너의 기분은</a>
-            <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button> -->
-        </nav>
-        <section class="section">
-            <h1 class="title">기분 테스트</h1>
-            <h2 class="subtitle">나는 지금 어떤 기분일까?</h2>
-        </section>
+    <nav class="navbar navbar-expand-lg navbar-light" nav-distance>
+      <a class="navbar-brand" href="#">지금 너의 기분은</a>
+      <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+      </button> -->
+    </nav>
+    <section class="section">
+      <h1 class="title">기분 테스트</h1>
+      <h2 class="subtitle">나는 지금 어떤 기분일까?</h2>
+    </section>
+
+    <div class="title">
+    </div>
     
-        <div class="title">
+    <div class="file-upload">
+      <!-- <button class="file-upload-btn" type="button" onclick="$('.file-upload-input').trigger( 'click' )">Add Image</button>
+      <button class="camera-btn" type="button">Camera</button> -->
+    
+      <div class="image-upload-wrap">
+        <input class="file-upload-input" type='file' onchange="readURL(this);" accept="image/*" />
+        <div class="drag-text">
+          <h3>Drag and drop a file or select add Image</h3>
         </div>
+      </div>
+
+      <div class="file-upload-content">
+        <img class="file-upload-image" src="#" alt="your image" />
+        <div class="image-title-wrap">
+          <button type="button" onclick="removeUpload()" class="remove-image">Remove <span class="image-title">Uploaded Image</span></button>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <h3 class="neon">기분이 좋아보이는군요?<br>Does it look good? :D</h3>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    <script class="jsbin" src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+    <script src="AddImage.js"></script>
+    <script src="Result.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.3.1/dist/tf.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@0.8/dist/teachablemachine-image.min.js"></script>
+    <script type="text/javascript">
         
-        <div class="file-upload">
-            <button class="file-upload-btn" type="button" onclick="$('.file-upload-input').trigger( 'click' )">Add Image</button>
-            <button class="camera-btn" type="button">Camera</button>
-          
-            <div class="image-upload-wrap">
-              <input class="file-upload-input" type='file' onchange="readURL(this);" accept="image/*" />
-              <div class="drag-text">
-                <h3>Drag and drop a file or select add Image</h3>
-              </div>
-            </div>
-            <div class="file-upload-content">
-              <img class="file-upload-image" src="#" alt="your image" />
-              <div class="image-title-wrap">
-                <button type="button" onclick="removeUpload()" class="remove-image">Remove <span class="image-title">Uploaded Image</span></button>
-              </div>
-            </div>
-        </div>
-        <div class="container">
-            <h3 class="neon">기분이 좋아보이는군요?
-                <br>Does it look good? :D</h3>
-        </div>
-    
-        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
-        <script class="jsbin" src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
-        <script src="AddImage.js"></script>
-        <script src="Camera.js"></script>
+    </script>
 
-        <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.3.1/dist/tf.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@0.8/dist/teachablemachine-image.min.js"></script>
-        <script type="text/javascript">
-            
-        </script>
-
-    </body>
+  </body>
 </html>
