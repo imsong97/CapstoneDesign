@@ -28,6 +28,9 @@ async function init() {
     // await webcam.setup(); // request access to the webcam
     // // await webcam.play();
     // window.requestAnimationFrame(loop);
+    $('.mage-upload-wrap').hide();
+    $('.loading').show();
+
     await predict();
 
     // append elements to the DOM
@@ -36,9 +39,6 @@ async function init() {
     for (let i = 0; i < maxPredictions; i++) { // and class labels
         labelContainer.appendChild(document.createElement("div"));
     }
-
-    $('.mage-upload-wrap').hide();
-    $('.loading').show();
 }
 
 async function loop() {
