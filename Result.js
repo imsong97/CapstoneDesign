@@ -27,12 +27,11 @@ async function init() {
     // webcam = new tmImage.Webcam(200, 200, flip); // width, height, flip
     // await webcam.setup(); // request access to the webcam
     // // await webcam.play();
-    // window.requestAnimationFrame(loop);
     $('.mage-upload-wrap').hide();
     $('.loading').show();
 
-    await predict();
-
+    window.requestAnimationFrame(loop);
+   
     // append elements to the DOM
     document.getElementById("webcam-container").appendChild(webcam.canvas);
     labelContainer = document.getElementById("label-container");
@@ -42,8 +41,8 @@ async function init() {
 }
 
 async function loop() {
-    webcam.update(); // update the webcam frame
-    // await predict();
+    // webcam.update(); // update the webcam frame
+    await predict();
     window.requestAnimationFrame(loop);
 }
 
