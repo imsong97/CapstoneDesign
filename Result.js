@@ -15,6 +15,9 @@ async function init() {
     const modelURL = URL + "model.json";
     const metadataURL = URL + "metadata.json";
 
+    $('.file-upload-content').hide();
+    $('.loading').show();
+
     // load the model and metadata
     // Refer to tmImage.loadFromFiles() in the API to support files from a file picker
     // or files from your local hard drive
@@ -26,7 +29,7 @@ async function init() {
     const flip = true; // whether to flip the webcam
     webcam = new tmImage.Webcam(200, 200, flip); // width, height, flip
     await webcam.setup(); // request access to the webcam
-    await webcam.play();
+    // await webcam.play();
     window.requestAnimationFrame(loop);
 
     // append elements to the DOM
@@ -45,6 +48,7 @@ async function loop() {
 
 // run the webcam image through the image model
 async function predict() {
+    $('.loading').hide();
     // predict can take in an image, video or canvas html element
     const img = document.querySelector(".file-upload-image")
     const prediction = await model.predict(img);
