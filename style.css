@@ -104,7 +104,6 @@ body {
 }
 
 .image-upload-wrap {
-  margin-top: 10%;
   border: 4px dashed #1FB264;
   position: relative;
   width: 100%;
@@ -183,4 +182,8 @@ body {
   color: #000000;
   text-align: center;
   padding:30px;
+}
+
+.button{
+  display: none;
 }
