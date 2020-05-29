@@ -24,6 +24,7 @@ async function init() {
     // Note: the pose library adds "tmImage" object to your window (window.tmImage)
     model = await tmImage.load(modelURL, metadataURL);
     maxPredictions = model.getTotalClasses();
+    
     predict();
 
     // // Convenience function to setup a webcam
