@@ -12,7 +12,8 @@ const img = document.querySelector(".file-upload-image")
 
 // Load the image model and setup the webcam
 async function init() {
-    $('.image-title-wrap').hide();
+    $('.remove-image').hide();
+    $('.start-image').hide();
     $('.loading').show();
 
     const modelURL = URL + "model.json";
