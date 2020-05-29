@@ -12,6 +12,9 @@ const img = document.querySelector(".file-upload-image")
 
 // Load the image model and setup the webcam
 async function init() {
+    $('.mage-upload-wrap').hide();
+    $('.loading').show();
+
     const modelURL = URL + "model.json";
     const metadataURL = URL + "metadata.json";
 
@@ -27,9 +30,7 @@ async function init() {
     // webcam = new tmImage.Webcam(200, 200, flip); // width, height, flip
     // await webcam.setup(); // request access to the webcam
     // // await webcam.play();
-    $('.mage-upload-wrap').hide();
-    $('.loading').show();
-
+    
     window.requestAnimationFrame(loop);
    
     // append elements to the DOM
