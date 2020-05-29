@@ -52,7 +52,7 @@ async function init() {
 // run the webcam image through the image model
 async function predict() {
     $('.loading').hide();
-    $('.image-title-wrap').show();
+    $('.remove-image').show();
     // predict can take in an image, video or canvas html element
     const img = document.querySelector(".file-upload-image")
     const prediction = await model.predict(img);
