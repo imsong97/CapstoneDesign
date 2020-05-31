@@ -1,5 +1,5 @@
 body {
-  font-family: sans-serif;
+  font-family: 'Jua', sans-serif;
   background-color: #eeeeee;
 }
 
@@ -203,6 +203,7 @@ body {
 
 .loading {
   display: none;
+  margin: 1%;
 }
 
 .spiner {
