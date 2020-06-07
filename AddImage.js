@@ -4,7 +4,6 @@ function readURL(input) {
         reader.onload = function(e) {
             $('.image-upload-wrap').hide();
             $('.file-upload-image').attr('src', e.target.result);
-            $('.camera-btn').hide();
             $('.file-upload-content').show();
             $('.myCanvas').hide();
         };

@@ -58,23 +58,6 @@ body {
   margin-top: 3%;
 }
 
-.capture-btn{
-  width: 100%;
-  display: none;
-  color: #fff;
-  background: #1FB264;
-  border: none;
-  padding: 2%;
-  border-radius: 4px;
-  border-bottom: 4px solid #15824B;
-  transition: all .2s ease;
-  outline: none;
-  text-transform: uppercase;
-  font-weight: 700;
-  position: relative;
-  margin-top: 2%;
-}
-
 .file-upload-btn:hover {
   background: #1AA059;
   color: #ffffff;

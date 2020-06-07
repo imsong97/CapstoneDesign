@@ -7,7 +7,7 @@ const URL = "./my_model/";
 let model, labelContainer, maxPredictions;
 
 const content = document.getElementById("contents");
-let img;
+const img = document.querySelector(".file-upload-image");
 
 // Load the image model and setup the webcam
 async function init() {
@@ -40,11 +40,6 @@ async function predict() {
     $('.remove-image').show();
 
     // predict can take in an image, video or canvas html element
-    if(document.querySelector(".file-upload-image"))
-        img = document.querySelector(".file-upload-image");
-    else
-        img = document.querySelector(".myCanvas");
-
     const prediction = await model.predict(img);
     for (let i = 0; i < maxPredictions; i++) {
         const classPrediction =
