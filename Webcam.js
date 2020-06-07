@@ -7,7 +7,7 @@ let webcam;
 
 const btnCamera = document.querySelector(".camera-btn");
 const btnCapture = document.querySelector(".capture-btn");
-const uploadImage = document.querySelector(".file-upload-input")
+const c = document.querySelector(".myCanvas");
 
 // Load the image model and setup the webcam
 async function webcaminit() {
@@ -30,12 +30,13 @@ async function webcaminit() {
     $('.capture-btn').show();
 
     btnCapture.addEventListener("click", function(){
-        var context = cam.getContext('2d');
+        const context = c.getContext('2d');
         // Draw the video frame to the canvas.
-        context.drawImage(cam, 0, 0, cam.width, cam.height);
+        context.drawImage(cam, 0, 0, 400, 400);
         $('.capture-btn').hide();
         $('#webcam-container').hide();
         $('.file-upload-content').show();
+        $('.file-upload-image').hide();
     });
 }
 

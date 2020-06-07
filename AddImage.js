@@ -4,7 +4,9 @@ function readURL(input) {
         reader.onload = function(e) {
             $('.image-upload-wrap').hide();
             $('.file-upload-image').attr('src', e.target.result);
+            $('.camera-btn').hide();
             $('.file-upload-content').show();
+            $('.myCanvas').hide();
         };
 
         reader.readAsDataURL(input.files[0]);
@@ -14,12 +16,14 @@ function readURL(input) {
 }
 
 function removeUpload() {
-    $('.file-upload-input').replaceWith($('.file-upload-input').clone());
-    $('.file-upload-content').hide();
-    $('.image-upload-wrap').show();
-    $('.start-image').show();
-    $('#label-container').empty();
-    $('#contents').empty();
+    // $('.file-upload-input').replaceWith($('.file-upload-input').clone());
+    // $('.file-upload-content').hide();
+    // $('.image-upload-wrap').show();
+    // $('.start-image').show();
+    // $('.camera-btn').show();
+    // $('#label-container').empty();
+    // $('#contents').empty();
+    location.reload();
 }
 
 $('.image-upload-wrap').bind('dragover', function () {
