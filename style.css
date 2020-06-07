@@ -1,13 +1,7 @@
-html{
-  margin: 0;
-  padding: 0;
-}
 
 body {
   font-family: 'Jua', sans-serif;
   background-color: #eeeeee;
-  margin: 0;
-  padding: 0;
 }
 
 .navbar-light .navbar-brand {
@@ -20,9 +14,7 @@ body {
 .navbar-light .navbar-toggler{
   border-color: #ffffff;
 }
-.section {
-  margin-top: 5%;
-}
+
 .title{		
   font-family: cursive;
   text-align: center;
