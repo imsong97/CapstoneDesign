@@ -34,6 +34,7 @@ async function webcaminit() {
 
     $('.camera-btn').hide();
     $('.file-upload-content').show();
+    $('.file-upload-image').hide();
     $('.start-image').hide();
 }
 
