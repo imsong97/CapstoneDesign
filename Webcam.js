@@ -1,4 +1,4 @@
-const URL = "./my_model/";
+const URL_w = "./my_model/";
 
 let webcam, model_w, labelContainer_w, maxPredictions_w;
 
@@ -9,8 +9,8 @@ const content = document.getElementById("contents");
 async function webcaminit() {
     $('.image-upload-wrap').hide();
 
-    const modelURL = URL + "model.json";
-    const metadataURL = URL + "metadata.json";
+    const modelURL = URL_w + "model.json";
+    const metadataURL = URL_w + "metadata.json";
 
     model_w = await tmImage.load(modelURL, metadataURL);
     maxPredictions_w = model_w.getTotalClasses();
