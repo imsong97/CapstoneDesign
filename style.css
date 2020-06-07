@@ -15,7 +15,6 @@ body {
 }
 .navbar-light .navbar-brand {
   font-family: NanumSquareR;
-  line-height: 1.68;
   text-align: left;
   color: #000000;
   padding: 5% 5% 5% 3%;
@@ -30,7 +29,6 @@ body {
 }
 .title{		
   font-family: cursive;
-  line-height: 1.67;
   text-align: center;
   color: #ceaaaa;
 }
