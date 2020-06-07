@@ -1,9 +1,6 @@
-// More API functions here:
-// https://github.com/googlecreativelab/teachablemachine-community/tree/master/libraries/image
-
-// the link to your model provided by Teachable Machine export panel
 const URL = "./my_model/";
-let webcam, model, labelContainer, maxPredictions;
+
+let webcam, model_w, labelContainer_w, maxPredictions_w;
 
 const btnCamera = document.querySelector(".camera-btn");
 const content = document.getElementById("contents");
@@ -15,8 +12,8 @@ async function webcaminit() {
     const modelURL = URL + "model.json";
     const metadataURL = URL + "metadata.json";
 
-    model = await tmImage.load(modelURL, metadataURL);
-    maxPredictions = model.getTotalClasses();
+    model_w = await tmImage.load(modelURL, metadataURL);
+    maxPredictions_w = model_w.getTotalClasses();
     
     predict();
     
@@ -31,11 +28,10 @@ async function webcaminit() {
     // append elements to the DOM
     document.getElementById("webcam-container").appendChild(webcam.canvas);
 
-    labelContainer = document.getElementById("label-container");
-    for (let i = 0; i < maxPredictions; i++) { // and class labels
-        labelContainer.appendChild(document.createElement("div"));
+    labelContainer_w = document.getElementById("label-container");
+    for (let i = 0; i < maxPredictions_w; i++) { // and class labels
+        labelContainer_w.appendChild(document.createElement("div"));
     }
-
 
     $('.camera-btn').hide();
 }
@@ -52,11 +48,11 @@ async function predict() {
     $('.remove-image').show();
 
     // predict can take in an image, video or canvas html element
-    const prediction = await model.predict(img);
-    for (let i = 0; i < maxPredictions; i++) {
+    const prediction = await model_w.predict(img);
+    for (let i = 0; i < maxPredictions_w; i++) {
         const classPrediction =
             prediction[i].className + ": " + ((prediction[i].probability)*100).toFixed(1)+ "%";
-        labelContainer.childNodes[i].innerHTML = classPrediction;
+        labelContainer_w.childNodes[i].innerHTML = classPrediction;
     }
     if (prediction[0].probability>=0.7){
         content.innerText = "--사람을 만나 당신의 긍정적인 에너지를 나누어 주세요";
