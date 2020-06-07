@@ -15,15 +15,14 @@ async function webcaminit() {
     model_w = await tmImage.load(modelURL, metadataURL);
     maxPredictions_w = model_w.getTotalClasses();
     
-    predict();
-    
     // // Convenience function to setup a webcam
     const flip = true; // whether to flip the webcam
     webcam = new tmImage.Webcam(300, 300, flip); // width, height, flip
     await webcam.setup(); // request access to the webcam
     await webcam.play();
-    
-    window.requestAnimationFrame(loop);
+
+    w_predict();
+    window.requestAnimationFrame(w_loop);
    
     // append elements to the DOM
     document.getElementById("webcam-container").appendChild(webcam.canvas);
@@ -36,14 +35,14 @@ async function webcaminit() {
     $('.camera-btn').hide();
 }
 
-async function loop() {
+async function w_loop() {
     webcam.update(); // update the webcam frame
-    predict();
-    window.requestAnimationFrame(loop);
+    w_predict();
+    window.requestAnimationFrame(w_loop);
 }
 
 // run the webcam image through the image model
-async function predict() {
+async function w_predict() {
     $('.loading').hide();
     $('.remove-image').show();
 
