@@ -33,6 +33,7 @@ async function webcaminit() {
     }
 
     $('.camera-btn').hide();
+    $('.remove-image').show();
 }
 
 async function w_loop() {
@@ -57,8 +58,6 @@ async function w_predict() {
     }else{
         content_w.innerText = "--운동을 하여 부정적인 감정을 해소시키는 것이 좋겠군요?";
     }
-    
-    $('.remove-image').show();
 }
 
 btnCamera.addEventListener("click", webcaminit);
