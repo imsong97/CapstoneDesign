@@ -44,7 +44,7 @@ async function predict() {
         img = document.querySelector(".file-upload-image");
     else
         img = document.querySelector(".myCanvas");
-    console.log(document.querySelector(".myCanvas"))
+
     const prediction = await model.predict(img);
     for (let i = 0; i < maxPredictions; i++) {
         const classPrediction =
