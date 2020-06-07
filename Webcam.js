@@ -43,9 +43,6 @@ async function w_loop() {
 
 // run the webcam image through the image model
 async function w_predict() {
-    $('.loading').hide();
-    $('.remove-image').show();
-
     // predict can take in an image, video or canvas html element
     const prediction = await model_w.predict(webcam.canvas);
     for (let i = 0; i < maxPredictions_w; i++) {
@@ -60,6 +57,8 @@ async function w_predict() {
     }else{
         content_w.innerText = "--운동을 하여 부정적인 감정을 해소시키는 것이 좋겠군요?";
     }
+    
+    $('.remove-image').show();
 }
 
 btnCamera.addEventListener("click", webcaminit);

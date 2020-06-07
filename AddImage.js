@@ -5,7 +5,7 @@ function readURL(input) {
             $('.image-upload-wrap').hide();
             $('.file-upload-image').attr('src', e.target.result);
             $('.file-upload-content').show();
-            $('.myCanvas').hide();
+            $('.camera-btn').hide();
         };
 
         reader.readAsDataURL(input.files[0]);
