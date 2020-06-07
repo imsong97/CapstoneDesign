@@ -33,7 +33,8 @@ async function webcaminit() {
     }
 
     $('.camera-btn').hide();
-    $('.remove-image').show();
+    $('.file-upload-content').show();
+    $('.start-image').hide();
 }
 
 async function w_loop() {
