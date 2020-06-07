@@ -48,7 +48,7 @@ async function predict() {
     $('.remove-image').show();
 
     // predict can take in an image, video or canvas html element
-    const prediction = await model_w.predict(img);
+    const prediction = await model_w.predict(webcam.canvas);
     for (let i = 0; i < maxPredictions_w; i++) {
         const classPrediction =
             prediction[i].className + ": " + ((prediction[i].probability)*100).toFixed(1)+ "%";
