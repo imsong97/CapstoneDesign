@@ -48,22 +48,8 @@ body {
   max-width: 1000px;
 }
 
-.file-upload-btn {
-  width: 49%;
-  color: #fff;
-  background: #1FB264;
-  border: none;
-  padding: 2%;
-  border-radius: 4px;
-  border-bottom: 4px solid #15824B;
-  transition: all .2s ease;
-  outline: none;
-  text-transform: uppercase;
-  font-weight: 700;
-  position: relative;
-}
 .camera-btn{
-  width: 49%;
+  width: 100%;
   color: #fff;
   background: #1FB264;
   border: none;
@@ -75,6 +61,24 @@ body {
   text-transform: uppercase;
   font-weight: 700;
   position: relative;
+  margin-top: 1%;
+}
+
+.capture-btn{
+  width: 100%;
+  display: none;
+  color: #fff;
+  background: #1FB264;
+  border: none;
+  padding: 2%;
+  border-radius: 4px;
+  border-bottom: 4px solid #15824B;
+  transition: all .2s ease;
+  outline: none;
+  text-transform: uppercase;
+  font-weight: 700;
+  position: relative;
+  margin-top: 1%;
 }
 
 .file-upload-btn:hover {
@@ -360,4 +364,9 @@ body {
   border: 5px solid #9AD3DE;
   border-radius: 10px;
   box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.4);
+}
+
+canvas{
+  width: 60%;
+  margin-left: 23%;
 }

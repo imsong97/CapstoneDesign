@@ -4,11 +4,10 @@
 // the link to your model provided by Teachable Machine export panel
 const URL = "./my_model/";
 
-let model, webcam, labelContainer, maxPredictions;
+let model, labelContainer, maxPredictions;
 
-const content = document.getElementById("contents")
-const btnCamera = document.querySelector(".camera-btn")
-const img = document.querySelector(".file-upload-image")
+const content = document.getElementById("contents");
+const img = document.querySelector(".file-upload-image");
 
 // Load the image model and setup the webcam
 async function init() {
@@ -28,27 +27,12 @@ async function init() {
     
     predict();
 
-    // // Convenience function to setup a webcam
-    // const flip = true; // whether to flip the webcam
-    // webcam = new tmImage.Webcam(200, 200, flip); // width, height, flip
-    // await webcam.setup(); // request access to the webcam
-    // // await webcam.play();
-    
-    // window.requestAnimationFrame(loop);
-   
     // append elements to the DOM
-    // document.getElementById("webcam-container").appendChild(webcam.canvas);
     labelContainer = document.getElementById("label-container");
     for (let i = 0; i < maxPredictions; i++) { // and class labels
         labelContainer.appendChild(document.createElement("div"));
     }
 }
-
-// async function loop() {
-//     // webcam.update(); // update the webcam frame
-//     await predict();
-//     window.requestAnimationFrame(loop);
-// }
 
 // run the webcam image through the image model
 async function predict() {
@@ -70,5 +54,3 @@ async function predict() {
         content.innerText = "--운동을 하여 부정적인 감정을 해소시키는 것이 좋겠군요?";
     }
 }
-
-btnCamera.addEventListener("click", init);
