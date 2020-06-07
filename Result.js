@@ -42,7 +42,7 @@ async function predict() {
     // predict can take in an image, video or canvas html element
     if(document.querySelector(".file-upload-image"))
         img = document.querySelector(".file-upload-image");
-    else if(document.querySelector(".myCanvas"))
+    else
         img = document.querySelector(".myCanvas");
     
     const prediction = await model.predict(img);
