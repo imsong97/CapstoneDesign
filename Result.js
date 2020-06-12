@@ -47,6 +47,10 @@ async function predict() {
         labelContainer.childNodes[i].innerHTML = classPrediction;
         // barWidth = percent;
     }
+    
+    $.get("/contents.json", function(data) {
+        console.log(data.smile);
+    });
 
     if (prediction[0].probability>=0.7){
         content.innerText = "--사람을 만나 당신의 긍정적인 에너지를 나누어 주세요";
