@@ -4,17 +4,12 @@ body {
   background-color: #eeeeee;
 }
 
-.navbar-light .navbar-brand {
-  font-family: NanumSquareR;
-  text-align: left;
-  color: #000000;
-  padding: 5% 5% 5% 3%;
+.section{
+  margin-top: 5%;
 }
-
-.navbar-light .navbar-toggler{
-  border-color: #ffffff;
+a:hover{
+  text-decoration: none;
 }
-
 .title{		
   font-family: cursive;
   text-align: center;
@@ -24,6 +19,7 @@ body {
   font-family:cursive;
   line-height: 1.53;
   text-align: center;
+  margin-top: 1%;
   color: rgb(165, 156, 156);
 }
 @media screen and (max-width: 100%) {
