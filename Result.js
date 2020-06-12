@@ -50,7 +50,7 @@ async function predict() {
 
     $.get("/contents.json", function(data) {
         if (prediction[0].probability>=0.7){
-            content.innerText = data.smile[0];
+            content.innerHTML ="<a href="+data.smile[0]+">"+ "링크1"+ "</a>";
         }else if((prediction[0].probability>=0.4)&&(prediction[0].probability<0.7)){
             content.innerText = "--감정의 변화가 필요해요, 좋아하는 음악을 찾아 감성을 발휘해 보는 것이 어떨까요?";
         }else{
