@@ -47,9 +47,9 @@ async function predict() {
         labelContainer.childNodes[i].innerHTML = classPrediction;
         // barWidth = percent;
     }
-    
+
     $.get("/contents.json", function(data) {
-        console.log(data.smile);
+        console.log(data.smile[0]);
     });
 
     if (prediction[0].probability>=0.7){
