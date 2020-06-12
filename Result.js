@@ -4,7 +4,7 @@
 // the link to your model provided by Teachable Machine export panel
 const URL = "./my_model/";
 
-let model, labelContainer, maxPredictions;
+let model, labelContainer, maxPredictions, barWidth;
 
 const content = document.getElementById("contents");
 
@@ -42,10 +42,12 @@ async function predict() {
     const img = document.querySelector(".file-upload-image");
     const prediction = await model.predict(img);
     for (let i = 0; i < maxPredictions; i++) {
-        const classPrediction =
-            prediction[i].className + ": " + ((prediction[i].probability)*100).toFixed(1)+ "%";
+        const percent = ((prediction[i].probability)*100).toFixed(1);
+        const classPrediction = prediction[i].className + ": " + percent + "%";
         labelContainer.childNodes[i].innerHTML = classPrediction;
+        // barWidth = percent;
     }
+
     if (prediction[0].probability>=0.7){
         content.innerText = "--사람을 만나 당신의 긍정적인 에너지를 나누어 주세요";
     }else if((prediction[0].probability>=0.4)&&(prediction[0].probability<0.7)){
