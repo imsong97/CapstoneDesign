@@ -6,7 +6,7 @@ const URL = "./my_model/";
 
 let model, labelContainer, maxPredictions, barWidth;
 
-const content = document.getElementById("contents");
+let content = document.getElementById("contents");
 const res_title = document.querySelector(".res_title");
 
 // Load the image model and setup the webcam
