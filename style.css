@@ -292,6 +292,7 @@ a:hover{
 }
 
 #contents{
+  display: none;
   background-color: #FBFBEF;
   width: 90%;
   height: 100%;

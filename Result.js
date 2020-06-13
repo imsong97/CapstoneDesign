@@ -38,6 +38,7 @@ async function init() {
 async function predict() {
     $('.loading').hide();
     $('.remove-image').show();
+    $('#contents').show();
 
     // predict can take in an image, video or canvas html element
     const img = document.querySelector(".file-upload-image");
