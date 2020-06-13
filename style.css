@@ -365,3 +365,13 @@ canvas{
   margin: 0 auto;
   padding: 20px;
 }
+
+.contents-link{
+  width: 80%;
+  height: 50px;
+  background-color: #89e689;
+  margin: 1% auto;
+  border-radius: 3px;
+  text-align: center;
+  padding: 2%;
+}
