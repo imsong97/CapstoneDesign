@@ -52,7 +52,7 @@ async function predict() {
 
     $.get("/contents.json", function(data) {
         if (prediction[0].probability>=0.7){
-            content.innerHTML = "<div class='res_title'>" + "사람을 만나 당신의 긍정 에너지를 나누어 주세요" + "</div>"
+            content.innerHTML = "<div class='res-title'>" + "사람을 만나 당신의 긍정 에너지를 나누어 주세요" + "</div>"
                                 + "<div class='contents-link'><a href="+data.smile[0]+" target='_blank'>" + "링크1" + "</a></div>" 
                                 + "<div class='contents-link'><a href="+data.smile[1]+" target='_blank'>" + "링크2" + "</a></div>" 
                                 + "<div class='contents-link'><a href="+data.smile[2]+" target='_blank'>" + "링크3" + "</a></div>";

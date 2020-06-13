@@ -291,6 +291,10 @@ a:hover{
   }
 }
 
+#label-container{
+
+}
+
 #contents{
   display: none;
   background-color: #FBFBEF;
@@ -298,6 +302,21 @@ a:hover{
   height: 100%;
   margin: 3% auto;
   border-radius: 5px;
+  padding: 2%;
+}
+
+.res-title{
+  text-align: center;
+  margin-bottom: 4%;
+}
+
+.contents-link{
+  width: 80%;
+  height: 50px;
+  background-color: #CEF6CE;
+  margin: 1% auto;
+  border-radius: 3px;
+  text-align: center;
   padding: 2%;
 }
 
@@ -374,14 +393,4 @@ canvas{
 .myCanvas{
   margin: 0 auto;
   padding: 20px;
-}
-
-.contents-link{
-  width: 80%;
-  height: 50px;
-  background-color: #89e689;
-  margin: 1% auto;
-  border-radius: 3px;
-  text-align: center;
-  padding: 2%;
 }
