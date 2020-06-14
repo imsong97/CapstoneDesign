@@ -304,15 +304,19 @@ a:hover{
   border-radius: 5px;
   padding: 2%;
 }
+#contents a{
+  color: #35465d;
+}
 
 .res-title{
   text-align: center;
   margin-bottom: 4%;
+  color: #35465d;
 }
 
 .contents-music{
   width: 80%;
-  height: 50px;
+  height: 80px;
   background-color: #E0F8F7;
   margin: 1% auto;
   border-radius: 3px;
