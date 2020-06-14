@@ -52,10 +52,10 @@ async function predict() {
 
     $.get("/contents.json", function(data) {
         if (prediction[0].probability>=0.7){
-            content.innerHTML = "<div class='res-title'>" + "사람을 만나 당신의 긍정 에너지를 나누어 주세요" + "</div>"
-                                + "<div class='contents-link'><a href="+data.smile[0]+" target='_blank'>" + "링크1" + "</a></div>" 
+            content.innerHTML = "<div class='res-title'><strong>사람을 만나 당신의 긍정 에너지를 나누어 주세요</strong></div>"
+                                + "<div class='contents-music'><a href="+data.smile[0]+" target='_blank'>" + "링크1" + "</a></div>" 
                                 + "<div class='contents-link'><a href="+data.smile[1]+" target='_blank'>" + "링크2" + "</a></div>" 
-                                + "<div class='contents-link'><a href="+data.smile[2]+" target='_blank'>" + "링크3" + "</a></div>";
+                                + "<div class='contents-youtube'><a href="+data.smile[2]+" target='_blank'>" + "링크3" + "</a></div>";
         }else if((prediction[0].probability>=0.4)&&(prediction[0].probability<0.7)){
             res_title.innerText = "--감정의 변화가 필요해요, 좋아하는 음악을 찾아 감성을 발휘해 보는 것이 어떨까요?";
         }else{
