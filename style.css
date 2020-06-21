@@ -292,23 +292,23 @@ a:hover{
 }
 
 #label-container{
-
+  width: 90%;
+  margin: 0 auto;
 }
 .Pleasent{
-  
+  height: 2em;
 }
-.Pleasent .bar{
+.bar{
   width: 100%;
+  height: 2.5em;
   position: absolute;
   background: blue;
 }
-.Unpleasent{
-  
+.percent{
+  height: 100%;
 }
-.Unpleasent .bar{
-  width: 100%;
-  position: absolute;
-  background: red;
+.Unpleasent{
+  height: 2em;
 }
 
 #contents{
