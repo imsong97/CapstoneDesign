@@ -295,15 +295,19 @@ a:hover{
 
 }
 .Pleasent{
-  position: absolute;
+  
 }
 .Pleasent .bar{
+  width: 100%;
+  position: absolute;
   background: blue;
 }
 .Unpleasent{
-  position: absolute;
+  
 }
 .Unpleasent .bar{
+  width: 100%;
+  position: absolute;
   background: red;
 }
 
