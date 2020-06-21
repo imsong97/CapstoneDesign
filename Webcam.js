@@ -29,7 +29,9 @@ async function webcaminit() {
 
     labelContainer_w = document.getElementById("label-container");
     for (let i = 0; i < maxPredictions_w; i++) { // and class labels
-        labelContainer_w.appendChild(document.createElement("div"));
+        const div = document.createElement("div");
+        div.id = "d-flex"+i;
+        labelContainer_w.appendChild(div);
     }
 
     $('.camera-btn').hide();
@@ -49,8 +51,11 @@ async function w_predict() {
     // predict can take in an image, video or canvas html element
     const prediction = await model_w.predict(webcam.canvas);
     for (let i = 0; i < maxPredictions_w; i++) {
-        const classPrediction = prediction[i].className + ": " + ((prediction[i].probability)*100).toFixed(1)+ "%";
-        labelContainer_w.childNodes[i].innerHTML = classPrediction;
+        const percent = ((prediction[i].probability)*100).toFixed(1);
+        barWidth = percent + "%";
+        labelContainer_w.childNodes[i].innerHTML = 
+            "<div class='"+prediction[i].className+"'>" + prediction[i].className + "</div><div class='bar'><div class='percent' style='width:"+barWidth+"'></div></div>"
+            + "<span>"+barWidth+"</span>"
     }
     if (prediction[0].probability>=0.7){
         content_w.innerText = "--사람을 만나 당신의 긍정적인 에너지를 나누어 주세요";
