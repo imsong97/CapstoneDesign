@@ -403,7 +403,8 @@ a:hover{
   padding: 2%;
 }
 .contents-book-smile img{
-  width: 50%;
+  width: 44%;
+  margin: 3%;
 }
 .contents-book-angry{
   width: 80%;
@@ -412,7 +413,8 @@ a:hover{
   padding: 2%;
 }
 .contents-book-angry img{
-  width: 50%;
+  width: 44%;
+  margin: 3%;
 }
 
 .container{
