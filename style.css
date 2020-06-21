@@ -298,17 +298,18 @@ a:hover{
 .Pleasent{
   height: 2em;
 }
+.Unpleasent{
+  height: 2em;
+}
 .bar{
   width: 100%;
   height: 2.5em;
-  position: absolute;
+  position: relative;
   background: blue;
 }
 .percent{
   height: 100%;
-}
-.Unpleasent{
-  height: 2em;
+  background: #9AD3DE;
 }
 
 #contents{
