@@ -31,7 +31,6 @@ async function init() {
 
     // append elements to the DOM
     for (let i = 0; i < maxPredictions; i++) { // and class labels
-        div.class= "d-flex";
         labelContainer.appendChild(div);
     }
 }
