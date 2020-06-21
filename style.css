@@ -294,6 +294,18 @@ a:hover{
 #label-container{
 
 }
+.Pleasent{
+  position: absolute;
+}
+.Pleasent .bar{
+  background: blue;
+}
+.Unpleasent{
+  position: absolute;
+}
+.Unpleasent .bar{
+  background: red;
+}
 
 #contents{
   display: none;
@@ -336,6 +348,15 @@ a:hover{
   width: 80%;
   height: 50px;
   background-color: #FBEFF8;
+  margin: 1% auto;
+  border-radius: 3px;
+  text-align: center;
+  padding: 2%;
+}
+.contents-comment{
+  width: 80%;
+  height: 50px;
+  background-color: #F8ECE0;
   margin: 1% auto;
   border-radius: 3px;
   text-align: center;

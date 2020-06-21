@@ -4,10 +4,11 @@
 // the link to your model provided by Teachable Machine export panel
 const URL = "./my_model/";
 
-let model, labelContainer, maxPredictions, barWidth;
+let model, maxPredictions, barWidth;
 
 let content = document.getElementById("contents");
 const res_title = document.querySelector(".res_title");
+const labelContainer = document.getElementById("label-container");
 
 // Load the image model and setup the webcam
 async function init() {
@@ -27,11 +28,10 @@ async function init() {
     
     predict();
 
-    // append elements to the DOM
-    labelContainer = document.getElementById("label-container");
-    for (let i = 0; i < maxPredictions; i++) { // and class labels
-        labelContainer.appendChild(document.createElement("div"));
-    }
+    // // append elements to the DOM
+    // for (let i = 0; i < maxPredictions; i++) { // and class labels
+    //     labelContainer.appendChild(document.createElement("div"));
+    // }
 }
 
 // run the webcam image through the image model
@@ -45,9 +45,11 @@ async function predict() {
     const prediction = await model.predict(img);
     for (let i = 0; i < maxPredictions; i++) {
         const percent = ((prediction[i].probability)*100).toFixed(1);
-        const classPrediction = prediction[i].className + ": " + percent + "%";
-        labelContainer.childNodes[i].innerHTML = classPrediction;
-        // barWidth = percent;
+        barWidth = percent + "%";
+        // const classPrediction = prediction[i].className + ": " + percent + "%";
+        labelContainer.innerHTML = 
+            "<div class='"+prediction[i].className+"'>" + prediction[i].className + "</div><div class='bar'><div class='percent' style='width:"+barWidth+"'></div></div>"
+        // labelContainer.childNodes[i].innerHTML = classPrediction;
     }
 
     $.get("/contents.json", function(data) {
