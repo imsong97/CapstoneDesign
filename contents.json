@@ -86,9 +86,7 @@
         "https://search.pstatic.net/common/?src=http%3A%2F%2Fshop1.phinf.naver.net%2F20180709_75%2Fdmbooks5861_153111988073545LI6_JPEG%2F17365719618866576_1661388070.jpg&type=b400",
         "https://search.pstatic.net/common/?src=http%3A%2F%2Fshop1.phinf.naver.net%2F20180710_258%2Fdmbooks5861_1531199211627VKtCo_JPEG%2F17446520829135745_785349897.jpg&type=b400",
         "https://search.pstatic.net/common/?src=http%3A%2F%2Fshop1.phinf.naver.net%2F20200521_220%2F1590052970781pI3C7_JPEG%2F27412198914933348_1391872528.jpg&type=b400",
-        "https://search.pstatic.net/common/?src=http%3A%2F%2Fshop1.phinf.naver.net%2F20190508_212%2Fgosigosi2007_1557289803088SWon7_JPEG%2F43535641970072560_1369056411.jpg&type=b400",
-        "https://search.pstatic.net/common/?src=http%3A%2F%2Fshop1.phinf.naver.net%2F20170724_66%2Fjoymart24_1500877209470mjrCN_JPEG%2F32588332672234946_1342717736.jpg&type=b400",
-        "https://search.pstatic.net/common/?src=http%3A%2F%2Fshop1.phinf.naver.net%2F20200527_34%2F1590580572168WVALH_JPEG%2F27933198008288336_1810627810.jpg&type=b400"
+        "https://search.pstatic.net/common/?src=http%3A%2F%2Fshop1.phinf.naver.net%2F20190508_212%2Fgosigosi2007_1557289803088SWon7_JPEG%2F43535641970072560_1369056411.jpg&type=b400"
     ],
     "book_angry":[
         "https://search.pstatic.net/common/?src=http%3A%2F%2Fshop1.phinf.naver.net%2F20180124_115%2Fasacasii_1516792190767hysT8_JPEG%2F14746415675372_1725832400.jpg&type=b400",
@@ -111,5 +109,20 @@
         "https://search.pstatic.net/common/?src=http%3A%2F%2Fshop1.phinf.naver.net%2F20190508_228%2Fncp_1nqe5a_01_1557305923214PuW9f_JPEG%2F43548552124111529_1177183849.jpg&type=b400",
         "https://search.pstatic.net/common/?src=http%3A%2F%2Fshop1.phinf.naver.net%2F20190419_202%2Fdmbooks_1555673140620b9A0l_JPEG%2F41918979488861944_1118589770.jpg&type=b400",
         "https://search.pstatic.net/common/?src=http%3A%2F%2Fshop1.phinf.naver.net%2F20160128_177%2Fsmalls_1453939888003oFX54_JPEG%2F3501.jpg&type=b400"
-    ]
+    ],
+    "music_s":[
+        "https://www.youtube.com/watch?v=GdO5z0PIy3I", 
+        "https://www.youtube.com/watch?v=0V8sxvB6OYs", 
+        "https://www.youtube.com/watch?v=0lI5xI_gIIs", 
+        "https://www.youtube.com/watch?v=6jo-JVE3MYY"
+    ],
+    "music_a":[
+         "https://www.youtube.com/watch?v=owr89wtjObg", 
+         "https://www.youtube.com/watch?v=SmaLfD8n2_0", 
+         "https://www.youtube.com/watch?v=Y6pTQuE_t60",
+         "https://www.youtube.com/watch?v=owr89wtjObg&list=RDQMDUM9E-wKAsA&start_radio=1", 
+         "https://www.youtube.com/watch?v=zlskcG6CLAY", 
+         "https://www.youtube.com/watch?v=3tp_ZVvzxV4", 
+         "https://www.youtube.com/watch?v=0V8sxvB6OYs", 
+         "https://www.youtube.com/watch?v=Qew0KNjQh2g"]
 }
