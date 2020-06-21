@@ -31,7 +31,7 @@ async function init() {
 
     // append elements to the DOM
     for (let i = 0; i < maxPredictions; i++) { // and class labels
-        labelContainer.appendChild(div);
+        labelContainer.appendChild(document.createElement("div"));
     }
 }
 
