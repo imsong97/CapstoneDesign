@@ -50,7 +50,7 @@ async function predict() {
         barWidth = percent + "%";
         // const classPrediction = prediction[i].className + ": " + percent + "%";
         labelContainer.childNodes[i].innerHTML = 
-            "<div class='"+prediction[i].className+"'>" + prediction[i].className + "</div><div class='bar'><div class='percent' style='width:"+barWidth+"'></div></div>"
+            "<div class='"+prediction[i].className+"'>" + prediction[i].className + "</div><div class='bar'><div class='percent' style='width:"+barWidth+"'><span>"+barWidth+"</span></div></div>"
         // labelContainer.childNodes[i].innerHTML = classPrediction;
     }
 
