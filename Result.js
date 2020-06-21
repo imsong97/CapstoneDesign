@@ -9,7 +9,6 @@ let model, maxPredictions, barWidth;
 let content = document.getElementById("contents");
 const res_title = document.querySelector(".res_title");
 const labelContainer = document.getElementById("label-container");
-const div = document.createElement("div");
 
 // Load the image model and setup the webcam
 async function init() {
@@ -31,7 +30,9 @@ async function init() {
 
     // append elements to the DOM
     for (let i = 0; i < maxPredictions; i++) { // and class labels
-        labelContainer.appendChild(document.createElement("div"));
+        const div = document.createElement("div");
+        div.class = "d-flex";
+        labelContainer.appendChild(div);
     }
 }
 
