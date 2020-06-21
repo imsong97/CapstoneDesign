@@ -28,10 +28,10 @@ async function init() {
     
     predict();
 
-    // // append elements to the DOM
-    // for (let i = 0; i < maxPredictions; i++) { // and class labels
-    //     labelContainer.appendChild(document.createElement("div"));
-    // }
+    // append elements to the DOM
+    for (let i = 0; i < maxPredictions; i++) { // and class labels
+        labelContainer.appendChild(document.createElement("div"));
+    }
 }
 
 // run the webcam image through the image model
