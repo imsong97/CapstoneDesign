@@ -10,6 +10,8 @@ let content = document.getElementById("contents");
 const res_title = document.querySelector(".res_title");
 const labelContainer = document.getElementById("label-container");
 
+const name = ["😀😄", "😡😢"];
+
 // Load the image model and setup the webcam
 async function init() {
     $('.remove-image').hide();
@@ -49,7 +51,7 @@ async function predict() {
         const percent = ((prediction[i].probability)*100).toFixed(1);
         barWidth = percent + "%";
         labelContainer.childNodes[i].innerHTML = 
-            "<div class='"+prediction[i].className+"'>" + prediction[i].className + "</div><div class='bar'><div class='percent' style='width:"+barWidth+"'></div></div>"
+            "<div class='"+prediction[i].className+"'>" + name[i] + "</div><div class='bar'><div class='percent' style='width:"+barWidth+"'></div></div>"
             + "<span>"+barWidth+"</span>"
     }
 
