@@ -54,8 +54,8 @@ async function w_predict() {
         const percent = ((prediction[i].probability)*100).toFixed(1);
         barWidth = percent + "%";
         labelContainer_w.childNodes[i].innerHTML = 
-            "<div class='"+prediction[i].className+"'>" + prediction[i].className + "</div><div class='bar'><div class='percent' style='width:"+barWidth+"'></div></div>"
-            + "<span>"+barWidth+"</span>"
+            "<div class='"+prediction[i].className+"'>" + name[i] + "</div><div class='bar'><div class='percent' style='width:"+barWidth+"'></div></div>"
+            + "<span>"+barWidth+"</span>";
     }
 }
 

@@ -52,7 +52,7 @@ async function predict() {
         barWidth = percent + "%";
         labelContainer.childNodes[i].innerHTML = 
             "<div class='"+prediction[i].className+"'>" + name[i] + "</div><div class='bar'><div class='percent' style='width:"+barWidth+"'></div></div>"
-            + "<span>"+barWidth+"</span>"
+            + "<span>"+barWidth+"</span>";
     }
 
     $.get("/contents.json", function(data) {
