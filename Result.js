@@ -1,6 +1,5 @@
 const URL = "./my_model/";
-const modelURL = URL + "model.json";
-const metadataURL = URL + "metadata.json";
+let modelURL, metadataURL;
 
 let model, maxPredictions, barWidth;
 
@@ -14,6 +13,9 @@ async function init() {
     $('.remove-image').hide();
     $('.start-image').hide();
     $('.loading').show();
+
+    modelURL = URL + "model.json";
+    metadataURL = URL + "metadata.json";
 
     model = await tmImage.load(modelURL, metadataURL);
     maxPredictions = model.getTotalClasses();
