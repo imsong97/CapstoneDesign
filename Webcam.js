@@ -1,4 +1,4 @@
-let webcam, model_w;
+let webcam;
 const btnCamera = document.querySelector(".camera-btn");
 
 // Load the image model and setup the webcam
@@ -8,8 +8,8 @@ async function webcaminit() {
     modelURL = URL + "model.json";
     metadataURL = URL+ "metadata.json";
 
-    model_w = await tmImage.load(modelURL, metadataURL);
-    maxPredictions = model_w.getTotalClasses();
+    model = await tmImage.load(modelURL, metadataURL);
+    maxPredictions = model.getTotalClasses();
     
     // // Convenience function to setup a webcam
     const flip = true; // whether to flip the webcam
@@ -23,11 +23,7 @@ async function webcaminit() {
     // append elements to the DOM
     document.getElementById("webcam-container").appendChild(webcam.canvas);
 
-    for (let i = 0; i < maxPredictions; i++) { // and class labels
-        const div = document.createElement("div");
-        div.id = "d-flex"+i;
-        labelContainer.appendChild(div);
-    }
+    addLabel(maxPredictions);
 
     $('.camera-btn').hide();
     $('.file-upload-content').show();
@@ -44,8 +40,8 @@ async function w_loop() {
 // run the webcam image through the image model
 async function w_predict() {
     // predict can take in an image, video or canvas html element
-    const prediction = await model_w.predict(webcam.canvas);
-    
+    const prediction = await model.predict(webcam.canvas);
+
     percentBar(prediction, maxPredictions);
 }
 
