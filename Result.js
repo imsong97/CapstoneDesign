@@ -38,9 +38,23 @@ async function predict() {
     // predict can take in an image, video or canvas html element
     const img = document.querySelector(".file-upload-image");
     const prediction = await model.predict(img);
+
     percentBar(prediction, maxPredictions);
     
+    contents(prediction);
+}
 
+function percentBar(prediction, maxPredictions){
+    for (let i = 0; i < maxPredictions; i++) {
+        const percent = ((prediction[i].probability)*100).toFixed(1);
+        barWidth = percent + "%";
+        labelContainer.childNodes[i].innerHTML = 
+            "<div class='"+prediction[i].className+"'>" + name[i] + "</div><div class='bar'><div class='percent' style='width:"+barWidth+"'></div></div>"
+            + "<span>"+barWidth+"</span>";
+    }
+}
+
+function contents(prediction){
     $.get("/contents.json", function(data) {
         if (prediction[0].probability>=0.7){
             content.innerHTML = "<div class='res-title'><strong>사람을 만나 당신의 긍정 에너지를 나누어 주세요</strong></div>"
@@ -66,14 +80,4 @@ async function predict() {
                                 + "<div class='contents-comment'>"+data.comment[Math.floor(Math.random()*data.comment.length)]+"</div>";
         }
     });
-}
-
-function percentBar(prediction, maxPredictions){
-    for (let i = 0; i < maxPredictions; i++) {
-        const percent = ((prediction[i].probability)*100).toFixed(1);
-        barWidth = percent + "%";
-        labelContainer.childNodes[i].innerHTML = 
-            "<div class='"+prediction[i].className+"'>" + name[i] + "</div><div class='bar'><div class='percent' style='width:"+barWidth+"'></div></div>"
-            + "<span>"+barWidth+"</span>";
-    }
 }
