@@ -22,11 +22,7 @@ async function init() {
     
     predict();
 
-    for (let i = 0; i < maxPredictions; i++) { 
-        const div = document.createElement("div");
-        div.id = "d-flex"+i;
-        labelContainer.appendChild(div);
-    }
+    addLabel(maxPredictions);
 }
 
 // run the webcam image through the image model
@@ -42,6 +38,14 @@ async function predict() {
     percentBar(prediction, maxPredictions);
     
     contents(prediction);
+}
+
+function addLabel(maxPredictions){
+    for (let i = 0; i < maxPredictions; i++) { 
+        const div = document.createElement("div");
+        div.id = "d-flex"+i;
+        labelContainer.appendChild(div);
+    }
 }
 
 function percentBar(prediction, maxPredictions){

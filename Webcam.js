@@ -45,13 +45,8 @@ async function w_loop() {
 async function w_predict() {
     // predict can take in an image, video or canvas html element
     const prediction = await model_w.predict(webcam.canvas);
-    for (let i = 0; i < maxPredictions; i++) {
-        const percent = ((prediction[i].probability)*100).toFixed(1);
-        barWidth = percent + "%";
-        labelContainer.childNodes[i].innerHTML = 
-            "<div class='"+prediction[i].className+"'>" + name[i] + "</div><div class='bar'><div class='percent' style='width:"+barWidth+"'></div></div>"
-            + "<span>"+barWidth+"</span>";
-    }
+    
+    percentBar(prediction, maxPredictions);
 }
 
 btnCamera.addEventListener("click", webcaminit);
