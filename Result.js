@@ -27,10 +27,7 @@ async function predict() {
     // predict can take in an image, video or canvas html element
     const img = document.querySelector(".file-upload-image");
     const prediction = await model.predict(img);
-<<<<<<< HEAD
-    percentBar(prediction);
-    contents(prediction);
-=======
+    
     for (let i = 0; i < maxPredictions; i++) {
         const percent = ((prediction[i].probability)*100).toFixed(1);
         barWidth = percent + "%";
@@ -64,5 +61,4 @@ async function predict() {
                                 + "<div class='contents-comment'>"+data.comment[Math.floor(Math.random()*data.comment.length)]+"</div>";
         }
     });
->>>>>>> parent of 4e5314f... ui modify
 }
