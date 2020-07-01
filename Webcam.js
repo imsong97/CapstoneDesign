@@ -1,5 +1,3 @@
-const URL_w = "./my_model/";
-
 let webcam, model_w;
 const btnCamera = document.querySelector(".camera-btn");
 
@@ -7,8 +5,8 @@ const btnCamera = document.querySelector(".camera-btn");
 async function webcaminit() {
     $('.image-upload-wrap').hide();
 
-    const modelURL = URL_w + "model.json";
-    const metadataURL = URL_w + "metadata.json";
+    modelURL = URL + "model.json";
+    metadataURL = URL+ "metadata.json";
 
     model_w = await tmImage.load(modelURL, metadataURL);
     maxPredictions = model_w.getTotalClasses();
