@@ -3,7 +3,6 @@ const URL = "./my_model/";
 let model, maxPredictions, barWidth;
 
 let content = document.getElementById("contents");
-const res_title = document.querySelector(".res_title");
 const labelContainer = document.getElementById("label-container");
 
 const name = ["😀😄", "😡😢"];

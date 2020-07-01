@@ -1,9 +1,7 @@
 const URL_w = "./my_model/";
 
 let webcam, model_w;
-
 const btnCamera = document.querySelector(".camera-btn");
-const content_w = document.getElementById("contents");
 
 // Load the image model and setup the webcam
 async function webcaminit() {
@@ -27,7 +25,6 @@ async function webcaminit() {
     // append elements to the DOM
     document.getElementById("webcam-container").appendChild(webcam.canvas);
 
-    labelContainer = document.getElementById("label-container");
     for (let i = 0; i < maxPredictions; i++) { // and class labels
         const div = document.createElement("div");
         div.id = "d-flex"+i;
