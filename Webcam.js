@@ -1,4 +1,6 @@
-let webcam;
+const URL_w = "./my_model/";
+
+let webcam, model_w, labelContainer_w, maxPredictions_w;
 
 const btnCamera = document.querySelector(".camera-btn");
 const content_w = document.getElementById("contents");
@@ -6,6 +8,12 @@ const content_w = document.getElementById("contents");
 // Load the image model and setup the webcam
 async function webcaminit() {
     $('.image-upload-wrap').hide();
+
+    const modelURL = URL_w + "model.json";
+    const metadataURL = URL_w + "metadata.json";
+
+    model_w = await tmImage.load(modelURL, metadataURL);
+    maxPredictions_w = model_w.getTotalClasses();
     
     // // Convenience function to setup a webcam
     const flip = true; // whether to flip the webcam
@@ -19,11 +27,11 @@ async function webcaminit() {
     // append elements to the DOM
     document.getElementById("webcam-container").appendChild(webcam.canvas);
 
-    labelContainer = document.getElementById("label-container");
-    for (let i = 0; i < maxPredictions; i++) { // and class labels
+    labelContainer_w = document.getElementById("label-container");
+    for (let i = 0; i < maxPredictions_w; i++) { // and class labels
         const div = document.createElement("div");
         div.id = "d-flex"+i;
-        labelContainer.appendChild(div);
+        labelContainer_w.appendChild(div);
     }
 
     $('.camera-btn').hide();
@@ -46,8 +54,8 @@ async function w_predict() {
         const percent = ((prediction[i].probability)*100).toFixed(1);
         barWidth = percent + "%";
         labelContainer_w.childNodes[i].innerHTML = 
-            "<div class='"+prediction[i].className+"'>" + prediction[i].className + "</div><div class='bar'><div class='percent' style='width:"+barWidth+"'></div></div>"
-            + "<span>"+barWidth+"</span>"
+            "<div class='"+prediction[i].className+"'>" + name[i] + "</div><div class='bar'><div class='percent' style='width:"+barWidth+"'></div></div>"
+            + "<span>"+barWidth+"</span>";
     }
 }
 

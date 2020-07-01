@@ -1,10 +1,9 @@
 const URL = "./my_model/";
-const modelURL = URL + "model.json";
-const metadataURL = URL + "metadata.json";
-let model = await tmImage.load(modelURL, metadataURL);
-let maxPredictions = model.getTotalClasses();
 
-let barWidth;
+let model, maxPredictions, barWidth;
+
+let content = document.getElementById("contents");
+const res_title = document.querySelector(".res_title");
 const labelContainer = document.getElementById("label-container");
 
 const name = ["😀😄", "😡😢"];
@@ -14,10 +13,16 @@ async function init() {
     $('.remove-image').hide();
     $('.start-image').hide();
     $('.loading').show();
+
+    const modelURL = URL + "model.json";
+    const metadataURL = URL + "metadata.json";
+
+    model = await tmImage.load(modelURL, metadataURL);
+    maxPredictions = model.getTotalClasses();
     
     predict();
 
-    for (let i = 0; i < maxPredictions; i++) {
+    for (let i = 0; i < maxPredictions; i++) { 
         const div = document.createElement("div");
         div.id = "d-flex"+i;
         labelContainer.appendChild(div);
@@ -33,13 +38,12 @@ async function predict() {
     // predict can take in an image, video or canvas html element
     const img = document.querySelector(".file-upload-image");
     const prediction = await model.predict(img);
-    
     for (let i = 0; i < maxPredictions; i++) {
         const percent = ((prediction[i].probability)*100).toFixed(1);
         barWidth = percent + "%";
         labelContainer.childNodes[i].innerHTML = 
             "<div class='"+prediction[i].className+"'>" + name[i] + "</div><div class='bar'><div class='percent' style='width:"+barWidth+"'></div></div>"
-            + "<span>"+barWidth+"</span>"
+            + "<span>"+barWidth+"</span>";
     }
 
     $.get("/contents.json", function(data) {
