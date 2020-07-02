@@ -1,9 +1,11 @@
+// Model Learning Data
 const URL = "./my_model/";
 const modelURL = URL + "model.json";
 const metadataURL = URL + "metadata.json";
 
 let model, maxPredictions, barWidth;
 
+const img = document.querySelector(".file-upload-image");
 const content = document.getElementById("contents");
 const labelContainer = document.getElementById("label-container");
 
@@ -30,7 +32,6 @@ async function predict() {
     $('#contents').show();
 
     // predict can take in an image, video or canvas html element
-    const img = document.querySelector(".file-upload-image");
     const prediction = await model.predict(img);
 
     percentBar(prediction, maxPredictions);
