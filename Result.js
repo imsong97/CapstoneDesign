@@ -1,11 +1,10 @@
 const URL = "./my_model/";
-// let modelURL, metadataURL;
 const modelURL = URL + "model.json";
 const metadataURL = URL + "metadata.json";
 
 let model, maxPredictions, barWidth;
 
-let content = document.getElementById("contents");
+const content = document.getElementById("contents");
 const labelContainer = document.getElementById("label-container");
 
 const name = ["😀😄", "😡😢"];
@@ -15,9 +14,6 @@ async function init() {
     $('.remove-image').hide();
     $('.start-image').hide();
     $('.loading').show();
-
-    // modelURL = URL + "model.json";
-    // metadataURL = URL + "metadata.json";
 
     model = await tmImage.load(modelURL, metadataURL);
     maxPredictions = model.getTotalClasses();
